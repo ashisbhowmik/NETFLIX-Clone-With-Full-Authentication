@@ -1,0 +1,100 @@
+.profileScreen {
+  height: 100vh;
+  color: white;
+}
+.profileScreen__body {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  padding-top: 8%;
+  max-width: 800px;
+}
+
+.profileScreen__info {
+  margin-top: 30px;
+  display: flex;
+}
+.profileScreen__info img {
+  height: 60px;
+}
+.profileScreen__info h2 {
+  font-weight: 400;
+  font-size: 30px;
+  border-bottom: 1px solid #282c2d;
+}
+
+.profileScreen__details {
+  margin-left: 25px;
+  color: white;
+  flex: 1;
+}
+
+.profileScreen__details h2 {
+  background-color: gray;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.profileScreen__plans__signOutButton {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #e50914;
+  margin-top: 5%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+}
+
+.profileScreen__plans .plan__type {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 2px;
+  padding: 10px;
+  border-bottom: 2px solid gray;
+}
+.profileScreen__plans .plan__renewal__date {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 100;
+  padding: 3px;
+  margin-bottom: 4px;
+}
+
+.packages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.plan__video__quality {
+  font-weight: 600;
+  display: block;
+  font-size: 14px;
+}
+
+.plan__subscribe__button {
+  font-size: 15px;
+  padding: 8px 8px;
+  background-color: #e50914;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 300;
+  transition: transform 450ms;
+}
+.plan__subscribe__button:hover {
+  transform: scale(1.08);
+}
+
+.plus__memberShip {
+  background-color: gray;
+  font-weight: 700;
+}
