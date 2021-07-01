@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import "./row.css";
 import YouTube from "react-youtube";
-import movieTrailer from 'movie-trailer'
-
+import movieTrailer from "movie-trailer";
 
 const Row = ({ title, fetchURL, isLargeRow }) => {
-
   const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState('');
+  const [trailerUrl, setTrailerUrl] = useState("");
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
@@ -20,28 +18,25 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
   }, [fetchURL]);
 
   const opts = {
-      height: '390',
-      width: '100%',
-      playerVars: {
-        autoplay: 1,
-      },}
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
 
-
-      const moviePopUp = (movie)=>{
-          if(trailerUrl){
-            setTrailerUrl('')
-          } else{
-            movieTrailer(movie?.name || "")
-            .then(url=>{
-              const urlParams = new URLSearchParams(new URL(url).search);
-              setTrailerUrl(urlParams.get('v'));
-
-            })
-            .catch((error)=> alert('Sorry, we are not find your request, please try another one'));
-          }
-      };
-
-     
+  const moviePopUp = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.name || "")
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        })
+        .catch((error) => console.error('can"t find movie'));
+    }
+  };
 
   return (
     <div>
@@ -52,7 +47,7 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
           {movies.map((movie) => (
             <img
               key={movie.id}
-              onClick={ ()=> moviePopUp(movie)}
+              onClick={() => moviePopUp(movie)}
               className={`row__poster ${isLargeRow && "row__posterLarge"} `}
               src={`${baseUrl}${
                 isLargeRow ? movie.poster_path : movie.backdrop_path
@@ -61,10 +56,8 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
             />
           ))}
         </div>
-       {trailerUrl  &&  <YouTube videoId={trailerUrl} opts={opts}/>}
-        
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
       </div>
-
     </div>
   );
 };

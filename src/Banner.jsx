@@ -9,7 +9,7 @@ const Banner = () => {
     const fetchRandomData = async () => {
       const response = await axios.get(request.fetchNetflixOriginals);
       //   get a random movie by math.floor and math.random function
-      Math.floor(Math.random() * response.data.results.length - 1);
+      // Math.floor(Math.random() * response.data.results.length - 1);
       setRandomMovie(
         response.data.results[
           Math.floor(Math.random() * response.data.results.length - 1)
@@ -53,6 +53,7 @@ const Banner = () => {
           {truncate(randomMovie?.overview, 150)}
         </h1>
       </div>
+      {/* empty div for make a distance in bottom */}
       <div className="banner__fadeBottom" />
     </header>
   );

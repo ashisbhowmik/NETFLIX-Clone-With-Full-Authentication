@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import Row from "./Row";
-import request from "./request";
-import Banner from "./Banner";
-import Navbar from "./Navbar";
+import { Switch, Route } from "react-router-dom";
+import Login from "./Login";
+import HomeScreen from "./HomeScreen";
+import UserProfile from "./UserProfile";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
 
-function App() {
+const App = () => {
+  const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
   return (
-    <>
-      <div className="app">
-        {/* Navbar */}
-        <Navbar />
-
-        {/* banner */}
-        <Banner />
-        <Row
-          title="NETFLEX ORIGINALS"
-          fetchURL={request.fetchNetflixOriginals}
-          isLargeRow
-        />
-        <Row title="Trending Now" fetchURL={request.fetchTrending} />
-        <Row title="Top Rated" fetchURL={request.fetchTopRated} />
-        <Row title="Action Movies" fetchURL={request.fetchActionMovies} />
-        <Row title="Comedy Movies" fetchURL={request.fetchComedyMovies} />
-        <Row title="Horror Movies" fetchURL={request.fetchHorrorMovies} />
-        <Row title="Romance Movies" fetchURL={request.fetchRomanceMovies} />
-        <Row title="Documentaries" fetchURL={request.fetchDocumentaries} />
-      </div>
-    </>
+    <div className="app">
+      {!user ? (
+        <Login />
+      ) : (
+        <Switch>
+          <Route exact path="/">
+            <HomeScreen />
+          </Route>
+          <Route exact path="/profile">
+            <UserProfile />
+          </Route>
+        </Switch>
+      )}
+    </div>
   );
-}
+};
 export default App;

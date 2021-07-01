@@ -1,0 +1,57 @@
+.signInScreen__body {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signInScreen__body form {
+  display: flex;
+  flex-direction: column;
+}
+.signInScreen__body form input {
+  padding: 10px;
+  outline-width: 0;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  border: none;
+}
+.signInScreen__body form h2 {
+  text-align: left;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 35px;
+}
+.signInScreen__body form button {
+  padding: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #e50914;
+  color: white;
+  font-weight: 800;
+}
+.New_to_Netflix {
+  margin-top: 18px;
+}
+
+.sign {
+  font-size: 20px;
+  text-decoration: underline;
+}
+.gray {
+  color: gray;
+  font-size: 19px;
+  margin-right: 8px;
+}
+
+.singInScreen__singIn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.singInScreen__singIn {
+  font-size: 15px;
+}
