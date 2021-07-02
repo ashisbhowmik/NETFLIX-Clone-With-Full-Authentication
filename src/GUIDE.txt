@@ -1,1 +1,0 @@
-this is guide.txt file. now this is empty but future this will be full of information
