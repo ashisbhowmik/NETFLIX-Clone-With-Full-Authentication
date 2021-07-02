@@ -15,7 +15,7 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
       setMovies(request.data.results);
     }
     fetchData();
-  }, [fetchURL]);
+  }, []);
 
   const opts = {
     height: "390",
