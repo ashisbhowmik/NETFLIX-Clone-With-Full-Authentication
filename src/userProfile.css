@@ -98,3 +98,58 @@
   background-color: gray;
   font-weight: 700;
 }
+
+@media (max-width: 655px) {
+  .profileScreen__body h1 {
+    padding-top: 6%;
+    font-size: 19px;
+  }
+  .profileScreen__info img {
+    height: 35px;
+  }
+  .profileScreen__info h2 {
+    font-weight: 300;
+    font-size: 14px;
+    padding: 3px;
+    padding-left: 10px;
+  }
+  .profileScreen__details {
+    margin-left: 10px;
+  }
+  .profileScreen__plans .plan__type {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 1px;
+    padding: 6px;
+    border-bottom: 1px solid gray;
+  }
+  .profileScreen__plans .plan__renewal__date {
+    margin-top: 6px;
+    font-size: 11px;
+    padding: 2px;
+    margin-bottom: 1px;
+  }
+  .packages {
+    margin-top: 29px;
+  }
+  .package__name {
+    font-size: 13px;
+  }
+  .plan__video__quality {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .plan__subscribe__button {
+    font-size: 13px;
+    padding: 6px 6px;
+  }
+  .profileScreen__plans__signOutButton {
+    padding: 6px 9px;
+    margin-top: 9%;
+  }
+  .plus__memberShip {
+    background-color: gray;
+    font-weight: 500;
+    font-weight: 10px;
+  }
+}

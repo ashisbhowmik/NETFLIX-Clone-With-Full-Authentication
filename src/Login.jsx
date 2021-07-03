@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import "./login.css";
 import SignInScreen from "./SignInScreen";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const [login, setLogin] = useState(false);
+  const variants1 = {
+    hidden: { opacity: 0, x: -200 },
+    visible: { opacity: 1, x: 0 },
+  };
+  const variants2 = {
+    hidden: { opacity: 0, x: 200 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   return (
     <div className="loginScreen">
@@ -24,10 +33,22 @@ const Login = () => {
           <SignInScreen />
         ) : (
           <>
-            <h1>
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={variants1}
+              transition={{ duration: 1 }}
+            >
               Unlimited movies, TV shows <br /> and more.
-            </h1>
-            <h2>Watch anywhere. Cancel anytime.</h2>
+            </motion.h1>
+            <motion.h2
+              initial="hidden"
+              animate="visible"
+              variants={variants2}
+              transition={{ duration: 1 }}
+            >
+              Watch anywhere. Cancel anytime.
+            </motion.h2>
             <h4>
               Ready to watch? Enter your email to create or restart your
               membership.

@@ -55,3 +55,28 @@
 .singInScreen__singIn {
   font-size: 15px;
 }
+
+@media (max-width: 500px) {
+  .signInScreen__body form input {
+    text-align: left;
+    font-size: 13px;
+    height: 15px;
+  }
+  .gray {
+    color: gray;
+    font-size: 14px;
+  }
+  .singInScreen__singIn {
+    font-size: 12px;
+  }
+  .signInScreen__body form button {
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    height: 30px;
+  }
+  .signInScreen__body form h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+}

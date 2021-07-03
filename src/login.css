@@ -97,3 +97,34 @@
   margin-bottom: 5px;
   margin-top: 3px;
 }
+
+@media (max-width: 800px) {
+  .loginScreen__body h1 {
+    font-size: 30px;
+  }
+  .loginScreen__body h2 {
+    font-size: 19px;
+  }
+  .loginScreen__body h4 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px) {
+  .loginScreen__body {
+    top: 16%;
+  }
+  .loginScreen__getStarted {
+    padding: 13.55px 4px;
+  }
+  .loginScreen__logo {
+    width: 100px;
+    padding: 20px;
+  }
+  .loginScreen__button {
+    position: fixed;
+    right: 12x;
+    top: 20px;
+    padding: 10px;
+    font-weight: 500;
+  }
+}
