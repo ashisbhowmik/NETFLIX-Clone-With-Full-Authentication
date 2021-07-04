@@ -6,7 +6,7 @@ Technology thats are used For This clone-->
 1.  React Js
 2.  Google Firebase Authenication
 3.  Material UI Icons
-4.  React Hoocks
+4.  React Hooks
 5.  Redux
 6.  React Context Api
 7.  Firebase Database
