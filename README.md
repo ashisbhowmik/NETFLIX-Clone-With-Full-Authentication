@@ -2,6 +2,7 @@
 
 Technology thats are used For This clone-->
 
+0. TMDB Api
 1.  React Js
 2.  Google Firebase Authenication
 3.  Material UI Icons
