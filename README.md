@@ -14,6 +14,4 @@ Technology thats are used For This clone-->
 9.  Node js
 1.0  HTML( mainly JSX)
 1.1  CSS   ( mainly JSX)
-Javascript Here is the link of this site -->
-
-https://netflix-clone-615f6.web.app
+ 
